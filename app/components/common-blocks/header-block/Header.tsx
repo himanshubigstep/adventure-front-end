@@ -3,9 +3,6 @@ import { fetchHeader } from '@/app/api-data/api'
 import React, { useEffect, useState } from 'react'
 
 interface HeaderData {
-    Header_Menu: {
-
-    }
     main_logo: {
         id: number
         name: string
