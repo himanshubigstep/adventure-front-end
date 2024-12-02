@@ -20,7 +20,7 @@ interface HomePageTopBannerProps {
         <div className='absolute top-0 left-0 w-full h-full bg-blue-400 opacity-30 z-10' />
         <div className='absolute top-0 left-0 right-0 bottom-0 w-full h-full'>
           <img
-            src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${homePageData.media.url}`}
+            src={`${homePageData.media.url}`}
             alt={homePageData.media.name}
             className='w-full h-full object-cover object-top'
           />

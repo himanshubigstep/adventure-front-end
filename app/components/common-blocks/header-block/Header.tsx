@@ -31,7 +31,7 @@ const Header = () => {
     <div className='w-full h-[100px] shadow-md md:py-16 py-8'>
         <div className='w-full h-full md:max-w-[1440px] max-w-[90%] mx-auto flex justify-between items-center'>
             <img
-                src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${headerData?.main_logo[0]?.url}`}
+                src={`${headerData?.main_logo[0]?.url}`}
                 alt={headerData?.main_logo[0]?.name}
                 className='w-32'
             />

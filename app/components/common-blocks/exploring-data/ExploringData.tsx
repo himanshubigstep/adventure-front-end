@@ -26,7 +26,7 @@ interface ExploreItem {
     return (
       <div className='w-full h-full md:py-16 py-8'>
         <div className='w-full md:max-w-[1440px] max-w-[90%] mx-auto flex flex-col justify-center items-center'>
-          <div className='w-full h-full flex flex-col mb-8'>
+          <div className='w-full h-full flex flex-col mb-16'>
             <h1 className='font-bold text-3xl text-center'>{exploreHeading}</h1>
             <p className='text-center text-lg'>{exploredescription}</p>
           </div>
@@ -37,7 +37,7 @@ interface ExploreItem {
                 className='w-full h-full flex flex-col items-center hover:shadow-xl hover:scale-105 transition-all duration-1000 cursor-pointer'
               >
                 <img
-                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item?.background_image?.url}`}
+                  src={`${item?.background_image?.url}`}
                   alt=''
                   className='rounded-tl-lg rounded-tr-lg w-full h-64 object-cover object-top'
                 />
