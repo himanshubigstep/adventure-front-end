@@ -29,7 +29,6 @@ const Header = () => {
 
     fetchHeaderData();
   }, [])
-  console.log(headerData)
   
   return (
     <div className='w-full h-[100px] shadow-md md:py-16 py-8'>
