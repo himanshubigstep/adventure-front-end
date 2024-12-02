@@ -48,7 +48,9 @@ interface HomePageData {
     description: string;
     button: string;
     button_link: string;
-    background_image: {};
+    background_image: {
+      url: string;
+    };
   };
   explore_heading: {
     id: number;
