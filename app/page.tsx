@@ -49,7 +49,7 @@ interface HomePageData {
     button: string;
     button_link: string;
     background_image: {
-
+      url: string
     }
   }
   homePage_faqs: {

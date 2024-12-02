@@ -1,14 +1,5 @@
 import React from 'react'
 
-interface ExploreData {
-    id: number;
-    heading: string;
-    description: string;
-    background_image: {
-        url: string;
-    };
-}
-
 const ExploringData = ({ exploreHeading, exploreData, exploredescription, exploreButton }: { exploreHeading: string, exploredescription: string, exploreButton: string, exploreData: any }) => {
     console.log(exploreData)
     return (
