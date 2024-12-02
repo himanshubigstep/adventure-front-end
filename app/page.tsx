@@ -38,6 +38,7 @@ interface HomePageData {
   explore_heading: {
     id: number;
     heading: string;
+    description: string;
     button: string;
     button_link: string;
   }
@@ -85,12 +86,15 @@ export default function Home() {
     <div className=''>
       <HomePageTopBanner homePageData={homePageData?.HomePage_Introduction} />
       <ExploringData
-        exploreHeading={homePageData?.explore_heading}
+        exploreHeading={homePageData?.explore_heading?.heading || ''}
+        exploredescription={homePageData?.explore_heading?.description || ''}
+        exploreButton={homePageData?.explore_heading?.button || ''}
         exploreData={homePageData?.explore_data}
       />
       <SubscriberForm latest_info={homePageData?.news_letter} />
       <Faq
-        faqHeading={homePageData?.homePage_faqs}
+        faqHeading={homePageData?.homePage_faqs?.heading || ''}
+        faqContent={homePageData?.homePage_faqs?.description || ''}
         faqData={homePageData?.homePage_faqs_data}
       />
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IoIosArrowDown } from "react-icons/io";
 
-const Faq = ({ faqHeading, faqData }: { faqHeading: any, faqData: any }) => {
+const Faq = ({ faqHeading, faqData, faqContent }: { faqHeading: string, faqContent: string, faqData: any }) => {
     const [openId, setOpenId] = useState<string | null>(null);
 
     const toggleAccordion = (id: string) => {
@@ -12,10 +12,10 @@ const Faq = ({ faqHeading, faqData }: { faqHeading: any, faqData: any }) => {
             <div className='w-full md:max-w-[1440px] max-w-[90%] mx-auto flex flex-col justify-center items-center'>
                 <div className='w-full h-full flex flex-col mb-8'>
                     <h1 className='font-bold text-3xl text-center'>
-                        {faqHeading?.heading}
+                        {faqHeading}
                     </h1>
                     <p className='text-center text-lg'>
-                        {faqHeading?.description}
+                        {faqContent}
                     </p>
                 </div>
                 <div className="w-full h-full flex flex-col justify-center items-center space-y-6">

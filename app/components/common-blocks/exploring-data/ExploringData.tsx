@@ -1,15 +1,25 @@
 import React from 'react'
 
-const ExploringData = ({ exploreHeading, exploreData }: { exploreHeading: any, exploreData: any }) => {
+interface ExploreData {
+    id: number;
+    heading: string;
+    description: string;
+    background_image: {
+        url: string;
+    };
+}
+
+const ExploringData = ({ exploreHeading, exploreData, exploredescription, exploreButton }: { exploreHeading: string, exploredescription: string, exploreButton: string, exploreData: any }) => {
+    console.log(exploreData)
     return (
         <div className='w-full h-full md:py-16 py-8'>
             <div className='w-full md:max-w-[1440px] max-w-[90%] mx-auto flex flex-col justify-center items-center'>
                 <div className='w-full h-full flex flex-col mb-8'>
                     <h1 className='font-bold text-3xl text-center'>
-                        {exploreHeading?.heading}
+                        {exploreHeading}
                     </h1>
                     <p className='text-center text-lg'>
-                        {exploreHeading?.description}
+                        {exploredescription}
                     </p>
                 </div>
                 <div className='w-full h-full grid md:grid-cols-3 gap-8 grid-cols-1 justify-center items-center'>
@@ -36,7 +46,7 @@ const ExploringData = ({ exploreHeading, exploreData }: { exploreHeading: any, e
                         className='px-6 py-4 bg-blue-500 hover:bg-blue-800 text-white rounded-lg'
                         onClick={() => console.log('clicked')}
                     >
-                        {exploreHeading?.button}
+                        {exploreButton}
                     </button>
                 </div>
             </div>
