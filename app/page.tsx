@@ -5,6 +5,7 @@ import { fetchHomePage } from "./api-data/api";
 import SubscriberForm from "./components/subscriber/SubscriberForm";
 import ExploringData from "./components/common-blocks/exploring-data/ExploringData";
 import Faq from "./components/common-blocks/faq/Faq";
+import LoaderSpinner from "./components/common-blocks/loader-spinner/LoaderSpinner";
 
 interface ExploreItem {
   id: number;
@@ -35,6 +36,7 @@ interface HomePageData {
     media: {
       url: string;
       name: string;
+      mime: string;
       formats: {
         large: {
           url: string;
@@ -70,6 +72,7 @@ interface HomePageData {
 
 export default function Home() {
   const [homePageData, setHomePageData] = useState<HomePageData | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchHomePageData = async () => {
@@ -79,11 +82,17 @@ export default function Home() {
       } catch (error) {
         console.log(error);
         return null;
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchHomePageData();
   }, []);
+
+  if (isLoading) {
+    return <LoaderSpinner />;
+  }
 
   return (
     <div className=''>

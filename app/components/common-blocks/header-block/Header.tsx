@@ -1,6 +1,7 @@
 'use client'
 import { fetchHeader } from '@/app/api-data/api'
 import React, { useEffect, useState } from 'react'
+import LoaderSpinner from '../loader-spinner/LoaderSpinner'
 
 interface HeaderData {
     main_logo: {
@@ -12,6 +13,7 @@ interface HeaderData {
 
 const Header = () => {  
     const [headerData, setHeaderData] = useState<HeaderData | null>(null)
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchHeaderData = async () => {
@@ -21,11 +23,17 @@ const Header = () => {
       } catch (error) {
         console.log(error);
         return null;
+      } finally {
+        setIsLoading(false);
       }
     }
 
     fetchHeaderData();
   }, [])
+
+  if (isLoading) {
+    return <LoaderSpinner />;
+  }
   
   return (
     <div className='w-full h-[100px] shadow-md md:py-16 py-8'>
