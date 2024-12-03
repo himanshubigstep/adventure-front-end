@@ -63,12 +63,12 @@ const HomePageTopBanner = ({ homePageData }: HomePageTopBannerProps) => {
           >
             {homePageData.cta_1}
           </button>
-          <button
+          {/* <button
             className='px-6 py-4 bg-blue-500 hover:bg-blue-800 text-white rounded-lg'
             onClick={() => console.log('clicked')}
           >
             {homePageData.cta_2}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
