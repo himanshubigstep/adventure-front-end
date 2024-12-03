@@ -7,7 +7,7 @@ interface SubscriberInput {
 export const fetchHomePage = async () => {
     try {
         const response = await fetch(
-            `${process.env.NEXT_PUBLIC_BASE_URL}/home-page?populate[0]=HomePage_Introduction.media&populate[1]=news_letter.background_image&populate[2]=explore_heading&populate[3]=explore_data.background_image&populate[4]=homePage_faqs&populate[5]=homePage_faqs_data`,
+            `${process.env.NEXT_PUBLIC_BASE_URL}/home-page?populate[0]=HomePage_Introduction.media&populate[1]=news_letter.background_image&populate[2]=explore_heading&populate[3]=explore_data.background_image&populate[4]=homePage_faqs.background_image&populate[5]=homePage_faqs_data`,
         );
         if (!response.ok) {
             throw new Error("Network response was not ok");

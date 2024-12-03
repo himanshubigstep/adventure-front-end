@@ -100,12 +100,14 @@ const SubscriberForm: React.FC<SubscribeFormProps> = ({ latest_info }) => {
     return (
         <div className='w-full h-full bg-black md:py-16 py-8'>
             <div className='w-full h-full md:max-w-[1440px] max-w-[90%] mx-auto flex flex-col justify-center'>
-                <h1 className='font-bold text-3xl text-white text-center'>
-                    {latest_info?.heading}
-                </h1>
-                <p className='text-center text-lg text-white mb-8'>
-                    {latest_info?.description}
-                </p>
+                <div className="w-full h-full flex flex-col mb-16 space-y-4">
+                    <h1 className='font-bold text-3xl text-white text-center'>
+                        {latest_info?.heading}
+                    </h1>
+                    <p className='text-center text-lg text-white'>
+                        {latest_info?.description}
+                    </p>
+                </div>
                 <form onSubmit={handelSubscription} className={'w-full mx-auto h-full relative flex md:flex-row flex-col items-center justify-between md:gap-8 pt-8'}>
                     <InputFields
                         type='text'

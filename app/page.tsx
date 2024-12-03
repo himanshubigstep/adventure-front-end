@@ -66,6 +66,9 @@ interface HomePageData {
     id: number;
     heading: string;
     description: string;
+    background_image: {
+      url: string;
+    }
   };
   homePage_faqs_data: FaqItem[];
 }
@@ -108,6 +111,7 @@ export default function Home() {
         faqHeading={homePageData?.homePage_faqs?.heading || ''}
         faqContent={homePageData?.homePage_faqs?.description || ''}
         faqData={homePageData?.homePage_faqs_data || []}
+        bgImage={homePageData?.homePage_faqs?.background_image?.url || ''}
       />
     </div>
   );
