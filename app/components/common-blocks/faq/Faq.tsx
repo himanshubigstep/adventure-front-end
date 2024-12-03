@@ -26,7 +26,7 @@ const Faq = ({
 
   return (
     <div className="w-full h-full relative md:py-16 py-8">
-      <div className="w-full md:max-w-[1440px] max-w-[90%] mx-auto flex flex-col justify-center items-center">
+      <div className="w-full md:max-w-[1240px] max-w-[90%] mx-auto flex flex-col justify-center items-center">
         <div className="w-full h-full flex flex-col mb-16 space-y-4">
           <h1 className="font-bold text-3xl text-center">{faqHeading}</h1>
           <p className="text-center text-lg">{faqContent}</p>

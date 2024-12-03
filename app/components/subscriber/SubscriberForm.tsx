@@ -99,7 +99,7 @@ const SubscriberForm: React.FC<SubscribeFormProps> = ({ latest_info }) => {
 
     return (
         <div className='w-full h-full bg-black md:py-16 py-8'>
-            <div className='w-full h-full md:max-w-[1440px] max-w-[90%] mx-auto flex flex-col justify-center'>
+            <div className='w-full h-full md:max-w-[1240px] max-w-[90%] mx-auto flex flex-col justify-center'>
                 <div className="w-full h-full flex flex-col mb-16 space-y-4">
                     <h1 className='font-bold text-3xl text-white text-center'>
                         {latest_info?.heading}
@@ -115,7 +115,7 @@ const SubscriberForm: React.FC<SubscribeFormProps> = ({ latest_info }) => {
                         name='firstName'
                         value={inputValue.firstName}
                         onChange={handleInputChange('firstName')}
-                        placeholder='Enter your firstName'
+                        placeholder='Enter Your First Name'
                         className='bg-transparent text-white w-full h-12 px-4 rounded-lg outline-0'
                         error={formErrors.firstName}
                     />
@@ -125,7 +125,7 @@ const SubscriberForm: React.FC<SubscribeFormProps> = ({ latest_info }) => {
                         name='lastName'
                         value={inputValue.lastName}
                         onChange={handleInputChange('lastName')}
-                        placeholder='Enter your lastName'
+                        placeholder='Enter Your Last Name'
                         className='bg-transparent text-white w-full h-12 px-4 rounded-lg outline-0'
                         error={formErrors.lastName}
                     />
@@ -135,7 +135,7 @@ const SubscriberForm: React.FC<SubscribeFormProps> = ({ latest_info }) => {
                         name='email'
                         value={inputValue.email}
                         onChange={handleInputChange('email')}
-                        placeholder='Enter your email'
+                        placeholder='Enter Your Email'
                         className='bg-transparent text-white w-full h-12 px-4 rounded-lg outline-0'
                         error={formErrors.email}
                     />
