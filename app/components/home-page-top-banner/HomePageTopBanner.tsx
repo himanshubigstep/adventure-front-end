@@ -48,15 +48,15 @@ const HomePageTopBanner = ({ homePageData }: HomePageTopBannerProps) => {
         ) : null}
       </div>
       <div className='relative w-full h-full md:max-w-[1240px] max-w-[90%] mx-auto flex flex-col justify-center items-center z-20'>
-        <div className='md:w-2/3 w-full text-white mb-8 flex flex-col md:gap-8 gap-4 justify-center items-center'>
-          <h1 className='font-bold md:text-6xl text-4xl text-center'>
+        <div className='md:w-[80%] w-full text-white mb-8 flex flex-col md:gap-8 gap-4 justify-center'>
+          <h1 className='font-extrabold md:text-6xl text-4xl'>
             {homePageData.heading}
           </h1>
-          <p className='font-medium md:text-xl text-lg text-center'>
+          <p className='font-medium md:text-xl text-lg'>
             {homePageData.description}
           </p>
         </div>
-        <div className='md:w-2/3 w-full h-auto flex items-center gap-4 justify-center'>
+        <div className='md:w-[80%] w-full h-auto flex items-center gap-4'>
           <button
             className='px-6 py-4 bg-blue-500 hover:bg-blue-800 text-white rounded-lg'
             onClick={() => window.location.href = homePageData.cta_1_link}

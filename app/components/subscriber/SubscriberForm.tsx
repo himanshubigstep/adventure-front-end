@@ -98,7 +98,7 @@ const SubscriberForm: React.FC<SubscribeFormProps> = ({ latest_info }) => {
     };
 
     return (
-        <div className='w-full h-full bg-black md:py-16 py-8'>
+        <div className='w-full h-full bg-black md:py-24 py-16'>
             <div className='w-full h-full md:max-w-[1240px] max-w-[90%] mx-auto flex flex-col justify-center'>
                 <div className="w-full h-full flex flex-col mb-16 space-y-4">
                     <h1 className='font-bold text-3xl text-white text-center'>

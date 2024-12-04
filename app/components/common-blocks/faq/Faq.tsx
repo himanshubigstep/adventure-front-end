@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { IoIosArrowDown } from "react-icons/io";
+import { BiSolidDownArrow } from "react-icons/bi";
 
 interface FaqItem {
   id: string;
   heading: string;
-  content: string;
+  content: string | null;
+  list_content: string[] | null;
 }
 
 const Faq = ({
@@ -32,7 +33,7 @@ const Faq = ({
           <p className="text-center text-lg">{faqContent}</p>
         </div>
         <div className="w-full h-full flex md:flex-row flex-col justify-center items-center space-x-8">
-          <div className='w-full md:w-2/3 h-full flex flex-col justify-center items-center space-y-12'>
+          <div className='w-full md:w-2/3 h-full flex flex-col justify-center items-center space-y-8'>
             {faqData?.map((item) => (
               <div
                 key={item.id}
@@ -42,19 +43,31 @@ const Faq = ({
                   className="w-full cursor-pointer px-6 py-4 transition-all duration-300"
                   onClick={() => toggleAccordion(item.id)}
                 >
-                  <h3 className="font-medium text-xl flex justify-between items-center">
-                    {item.heading}
+                  <h3 className="font-normal text-xl flex gap-4 items-center">
                     <span
-                      className={`transform transition-transform duration-300 ${openId === item.id ? 'rotate-180' : ''
-                        }`}
+                      className={`transform transition-transform duration-300 ${openId === item.id ? 'rotate-180' : 'rotate-90'}`}
                     >
-                      <IoIosArrowDown />
+                      <BiSolidDownArrow />
                     </span>
+                    {item.heading}
                   </h3>
                 </div>
-
+                
                 {openId === item.id && (
-                  <div className="px-6 py-4 text-lg">{item.content}</div>
+                  <div className="px-6 py-4 text-lg">
+                    
+                    {item.content && <p>{item.content}</p>}
+                    
+                    {item.list_content && item.list_content.length > 0 && (
+                      <ul className="list-disc pl-6">
+                        {item.list_content.map((listItem, index) => (
+                          <li key={index}>{listItem}</li>
+                        ))}
+                      </ul>
+                    )}
+                    
+                    {!item.content && !item.list_content && <p>No additional information available.</p>}
+                  </div>
                 )}
               </div>
             ))}

@@ -21,7 +21,8 @@ interface ExploreItem {
 interface FaqItem {
   id: string;
   heading: string;
-  content: string;
+  content: string | null;
+  list_content: string[] | null
 }
 
 interface HomePageData {
@@ -98,7 +99,7 @@ export default function Home() {
   }
 
   return (
-    <div className=''>
+    <div className='poppins'>
       <HomePageTopBanner homePageData={homePageData?.HomePage_Introduction} />
       <ExploringData
         exploreHeading={homePageData?.explore_heading?.heading || ''}
