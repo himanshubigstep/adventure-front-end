@@ -28,7 +28,7 @@ interface ExploreItem {
         <div className='w-full md:max-w-[1240px] max-w-[90%] mx-auto flex flex-col justify-center items-center bg-white rounded-xl p-16'>
         <div className="w-full h-full flex flex-col mb-16 space-y-4">
             <h1 className='font-bold text-4xl'>{exploreHeading}</h1>
-            {/* <p className='text-center text-lg'>{exploredescription}</p> */}
+            {exploredescription && <p className='text-center text-lg'>{exploredescription}</p>}
           </div>
           <div className='w-full h-full grid md:grid-cols-2 gap-8 grid-cols-1 justify-center items-center'>
             {data?.map((item: ExploreItem) => (
